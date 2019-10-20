@@ -22,12 +22,11 @@
                 <transition-group tag="ul" name="list-animation">
                     <li v-for="todo in todoItems" :key="todo.Id" class="todo-item todo-item-animated">
                         <label class="todo-check">
-                            <input type="checkbox" v-model="todo.IsDone" v-on:click="move(todo)"/>
+                            <input type="checkbox" v-model="todo.IsDone" />
                             <span class="checkmark"></span>
                         </label>
                         <span class="todo-text" :class="{completed: todo.IsDone}">{{todo.Text}}</span>
-                        <a href="" v-on:click="removeTodo(todo)" onclick="return false;" title="Remove this item">x</a>
-
+                        <a href="" @click="removeTodo(todo)" onclick="return false;" title="Remove this item">x</a>
                     </li>
                 </transition-group>
 
